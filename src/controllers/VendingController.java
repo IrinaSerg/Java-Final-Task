@@ -7,6 +7,7 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Scanner;
 
+// Из всех функций контроллера вынести дублирование кода в отдельные функции
 public class VendingController {
     private VendingService service;
     private Boolean isCanceled;

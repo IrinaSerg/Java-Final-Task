@@ -4,6 +4,8 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.concurrent.ThreadLocalRandom;
 
+// Из всех функций модели вынести дублирование кода в отдельные функции
+// Пользовательские ошибки постараться объединить по смыслу
 public class Vending {
     private Integer id;
     private Map<String, Integer> items;

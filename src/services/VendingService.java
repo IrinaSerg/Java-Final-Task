@@ -8,6 +8,9 @@ import repositories.VendingRepository;
 
 import java.util.ArrayList;
 import java.util.Map;
+// Для данного сервиса создать интерфейс VendingServiceInterface
+// Во все объекты использующие это класс как зависимость передавать сервис по типу интерфейса
+// Из всех функций сервиса вынести дублирование кода в отдельные функции
 
 public class VendingService {
     private VendingRepository repository;
