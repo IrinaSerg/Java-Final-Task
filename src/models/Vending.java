@@ -14,6 +14,10 @@ public class Vending {
         this.id = id;
         this.items = items;
         this.reservedItems = new HashMap<String, Integer>();
+        for(String item: items.keySet()) {
+            this.reservedItems.put(item, 0);
+        }
+        this.orders = new HashMap<String, Map<String, Integer>>();
     }
 
     public Integer getID() {
@@ -26,7 +30,11 @@ public class Vending {
 
     public String reserveItems(Map<String, Integer> items) throws ReserveItemException {
         Map<String, Integer> freeItems = new HashMap<String, Integer>();
-        for ( String key : freeItems.keySet() ) {
+        for ( String key : this.items.keySet() ) {
+            freeItems.put(key, 0);
+        }
+
+        for ( String key : this.items.keySet() ) {
             freeItems.put(key, this.items.get(key).intValue() - this.reservedItems.get(key).intValue());
         }
 
@@ -57,6 +65,7 @@ public class Vending {
             reservedItems.put(key, reservedItems.get(key).intValue() - order.get(key).intValue());
         }
 
+        this.orders.remove(code);
         return order;
     }
 }
